@@ -39,6 +39,12 @@ window.addEventListener("DOMContentLoaded", () => {
             `;
 
             moviesGrid.appendChild(movieCard);
+
+        
+            const watchBtn = movieCard.querySelector('.watch-btn');
+            watchBtn.addEventListener('click', () => {
+              window.open(`https://www.imdb.com/title/${movie.imdbID}/`, '_blank');
+            });
           }
         } else {
           // Show movie not found image
@@ -55,11 +61,3 @@ window.addEventListener("DOMContentLoaded", () => {
     apiResponse();
   });
 });
-
-// objTest = {
-//   0 : "0th element",
-//   1 : "1st element",
-//   2 : "2nd element"
-// }
-
-// console.log(objTest[2])// test case
