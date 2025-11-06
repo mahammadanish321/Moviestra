@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const moviesGrid = document.querySelector(".movies-grid");
   const overlay = document.getElementById("overlay");
 
-  goBtn.addEventListener("click", () => {
+  function renderData() {
     async function apiResponse() {
       try {
         const response = await fetch(
@@ -24,7 +24,10 @@ window.addEventListener("DOMContentLoaded", () => {
             const movieCard = document.createElement("div");
             movieCard.className = "movie-card";
 
-            const posterSrc = movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x200?text=No+Image";
+            const posterSrc =
+              movie.Poster !== "N/A"
+                ? movie.Poster
+                : "https://via.placeholder.com/300x200?text=No+Image";
 
             movieCard.innerHTML = `
               <img class="movie-poster" src="${posterSrc}" alt="${movie.Title} Poster">
@@ -40,9 +43,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
             moviesGrid.appendChild(movieCard);
 
-            const watchBtn = movieCard.querySelector('.watch-btn');
-            watchBtn.addEventListener('click', () => {
-              window.open(`https://www.imdb.com/title/${movie.imdbID}/`, '_blank');
+            const watchBtn = movieCard.querySelector(".watch-btn");
+            watchBtn.addEventListener("click", () => {
+              window.open(
+                `https://www.imdb.com/title/${movie.imdbID}/`,
+                "_blank"
+              );
             });
           }
         } else {
@@ -58,5 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
     apiResponse();
+  }
+
+  goBtn.addEventListener("click", renderData);
+  input.addEventListener("keydown", (e) => {
+    if (e.key == "Enter") {
+      renderData();
+    }
   });
 });
