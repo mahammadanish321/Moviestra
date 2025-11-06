@@ -6,7 +6,7 @@
 
 ## 🌐 Live Demo  
 
-🔗 **Check it out here:** [Moviestra Live Website](https://your-live-site-link.com)
+🔗 **Check it out here:** [Moviestra Live Website](https://mahammadanish321.github.io/Moviestra/)
 
 ---
 
