@@ -40,7 +40,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
             moviesGrid.appendChild(movieCard);
 
-        
             const watchBtn = movieCard.querySelector('.watch-btn');
             watchBtn.addEventListener('click', () => {
               window.open(`https://www.imdb.com/title/${movie.imdbID}/`, '_blank');
