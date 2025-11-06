@@ -25,6 +25,8 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 20;
         }
 
         .logo {
@@ -93,6 +95,14 @@
         .movie-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
         .movie-header {
@@ -227,6 +237,20 @@
                 padding: 25px;
             }
         }
+
+        /* Full-screen overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 10;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -235,181 +259,18 @@
         <div class="logo">Moviestra</div>
         <div class="search-box">
             <input type="text" placeholder="Search movies...">
-            <button>Go</button>
+            <button id="Go">Go</button>
         </div>
     </nav>
+
+    <!-- Full-screen overlay -->
+    <div id="overlay" class="overlay" style="background-image: url('public/HomeDiogloge.png');"></div>
 
     <!-- Movies Grid -->
     <div class="container">
         <div class="movies-grid">
-            
-            <!-- Movie 1 -->
-            <div class="movie-card">
-                <div class="movie-header">
-                    <div>
-                        <h3 class="movie-title">Pulp Fiction</h3>
-                        <p class="movie-year">1994</p>
-                    </div>
-                    <span class="rating-badge">R</span>
-                </div>
-                
-                <p class="movie-meta">2h 34min</p>
-                
-                <div class="genres">
-                    <span class="genre-tag">Crime</span>
-                    <span class="genre-tag">Drama</span>
-                    <span class="genre-tag">Black Comedy</span>
-                </div>
-                
-                <div class="rating">
-                    <span class="rating-score">8.9/10</span>
-                    <span class="likes">2.3M likes</span>
-                </div>
-                
-                <p class="summary">The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.</p>
-                
-                <button class="watch-btn">Watch Trailer</button>
-            </div>
-
-            <!-- Movie 2 -->
-            <div class="movie-card">
-                <div class="movie-header">
-                    <div>
-                        <h3 class="movie-title">The Shawshank Redemption</h3>
-                        <p class="movie-year">1994</p>
-                    </div>
-                    <span class="rating-badge">R</span>
-                </div>
-                
-                <p class="movie-meta">2h 22min</p>
-                
-                <div class="genres">
-                    <span class="genre-tag">Drama</span>
-                    <span class="genre-tag">Crime</span>
-                </div>
-                
-                <div class="rating">
-                    <span class="rating-score">9.3/10</span>
-                    <span class="likes">3.1M likes</span>
-                </div>
-                
-                <p class="summary">Two imprisoned men bond over years, finding solace and eventual redemption through acts of common decency.</p>
-                
-                <button class="watch-btn">Watch Trailer</button>
-            </div>
-
-            <!-- Movie 3 -->
-            <div class="movie-card">
-                <div class="movie-header">
-                    <div>
-                        <h3 class="movie-title">The Dark Knight</h3>
-                        <p class="movie-year">2008</p>
-                    </div>
-                    <span class="rating-badge">PG-13</span>
-                </div>
-                
-                <p class="movie-meta">2h 32min</p>
-                
-                <div class="genres">
-                    <span class="genre-tag">Action</span>
-                    <span class="genre-tag">Crime</span>
-                    <span class="genre-tag">Drama</span>
-                </div>
-                
-                <div class="rating">
-                    <span class="rating-score">9.0/10</span>
-                    <span class="likes">2.8M likes</span>
-                </div>
-                
-                <p class="summary">Batman must accept one of the greatest psychological tests to fight injustice and the chaos that the Joker brings.</p>
-                
-                <button class="watch-btn">Watch Trailer</button>
-            </div>
-
-            <!-- Movie 4 -->
-            <div class="movie-card">
-                <div class="movie-header">
-                    <div>
-                        <h3 class="movie-title">Inception</h3>
-                        <p class="movie-year">2010</p>
-                    </div>
-                    <span class="rating-badge">PG-13</span>
-                </div>
-                
-                <p class="movie-meta">2h 28min</p>
-                
-                <div class="genres">
-                    <span class="genre-tag">Sci-Fi</span>
-                    <span class="genre-tag">Action</span>
-                    <span class="genre-tag">Thriller</span>
-                </div>
-                
-                <div class="rating">
-                    <span class="rating-score">8.8/10</span>
-                    <span class="likes">2.5M likes</span>
-                </div>
-                
-                <p class="summary">A thief who steals corporate secrets through dream-sharing technology is given the task of planting an idea.</p>
-                
-                <button class="watch-btn">Watch Trailer</button>
-            </div>
-
-            <!-- Movie 5 -->
-            <div class="movie-card">
-                <div class="movie-header">
-                    <div>
-                        <h3 class="movie-title">Interstellar</h3>
-                        <p class="movie-year">2014</p>
-                    </div>
-                    <span class="rating-badge">PG-13</span>
-                </div>
-                
-                <p class="movie-meta">2h 49min</p>
-                
-                <div class="genres">
-                    <span class="genre-tag">Sci-Fi</span>
-                    <span class="genre-tag">Drama</span>
-                    <span class="genre-tag">Adventure</span>
-                </div>
-                
-                <div class="rating">
-                    <span class="rating-score">8.7/10</span>
-                    <span class="likes">1.9M likes</span>
-                </div>
-                
-                <p class="summary">A team of explorers travel through a wormhole in space to ensure humanity's survival as Earth becomes uninhabitable.</p>
-                
-                <button class="watch-btn">Watch Trailer</button>
-            </div>
-
-            <!-- Movie 6 -->
-            <div class="movie-card">
-                <div class="movie-header">
-                    <div>
-                        <h3 class="movie-title">Fight Club</h3>
-                        <p class="movie-year">1999</p>
-                    </div>
-                    <span class="rating-badge">R</span>
-                </div>
-                
-                <p class="movie-meta">2h 19min</p>
-                
-                <div class="genres">
-                    <span class="genre-tag">Drama</span>
-                    <span class="genre-tag">Thriller</span>
-                </div>
-                
-                <div class="rating">
-                    <span class="rating-score">8.8/10</span>
-                    <span class="likes">2.2M likes</span>
-                </div>
-                
-                <p class="summary">An insomniac office worker forms an underground fight club that evolves into something much more dangerous.</p>
-                
-                <button class="watch-btn">Watch Trailer</button>
-            </div>
-
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
