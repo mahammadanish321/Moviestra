@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moviestra</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav>
         <div class="logo">Moviestra</div>
         <div class="search-box">
             <input type="text" placeholder="Search movies...">
+            <ul id="suggestionsList" class="suggestions-dropdown">ksjdfhue</ul>
             <button id="Go">Go</button>
         </div>
     </nav>
@@ -24,6 +27,8 @@
         <div class="movies-grid">
         </div>
     </div>
+    <script src="suggestion.database.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
