@@ -146,8 +146,8 @@ button:hover {
 }
 
 .rating-badge {
-    background-color: #f0f0f0;
-    color: #666;
+    background-color: #ffd586;
+    color: #000000;
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 13px;
