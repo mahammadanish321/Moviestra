@@ -23,9 +23,7 @@ nav {
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
+    width: auto;
 }
 
 .search-box {
