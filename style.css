@@ -49,7 +49,7 @@
 
         button {
             padding: 10px 30px;
-            background-color: orange;
+            background-color: rgb(253, 195, 47);
             color: white;
             border: none;
             border-radius: 8px;
@@ -118,8 +118,8 @@
         }
 
         .rating-badge {
-            background-color: #f0f0f0;
-            color: #666;
+            background-color: rgb(255, 201, 65);
+            color: #000000;
             padding: 6px 12px;
             border-radius: 6px;
             font-size: 13px;
@@ -179,7 +179,7 @@
         .watch-btn {
             width: 100%;
             padding: 14px;
-            background-color: #333;
+            background-color: rgb(253, 195, 47);
             color: white;
             border: none;
             border-radius: 10px;
