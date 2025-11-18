@@ -39,5 +39,5 @@ You’ll need an **OMDb API Key** to fetch movie data.
 3. Replace `"YOUR_OMDB_API_KEY"` in your `script.js` file with your actual key.  
 
 Example:  
-```js
+```js.
 const apiKey = "YOUR_OMDB_API_KEY";
