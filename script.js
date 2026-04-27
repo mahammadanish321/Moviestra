@@ -356,13 +356,13 @@ document.addEventListener('click', function(event) {
         } else {
           // Show movie not found image
           overlay.style.display = "block";
-          overlay.style.backgroundImage = "url('public/movieNotFound.png')";
+          overlay.style.backgroundImage = "url('assets/movieNotFound.png')";
         }
       } catch (error) {
         console.log("error:", error);
         // Show try again image
         overlay.style.display = "block";
-        overlay.style.backgroundImage = "url('public/tryAgen.png')";
+        overlay.style.backgroundImage = "url('assets/tryAgen.png')";
       }
     }
     apiResponse();
